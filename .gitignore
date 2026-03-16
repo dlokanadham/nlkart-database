@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.dacpac
+*.jfm
+*.dbmdl
+*.refactorlog
+.DS_Store

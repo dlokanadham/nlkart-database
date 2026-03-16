@@ -1,8 +1,0 @@
-<Project>
-  <PropertyGroup>
-    <MSBuildTreatWarningsAsErrors>false</MSBuildTreatWarningsAsErrors>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectCapability Include="SqlProj" />
-  </ItemGroup>
-</Project>
