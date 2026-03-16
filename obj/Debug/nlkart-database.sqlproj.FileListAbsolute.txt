@@ -1,0 +1,4 @@
+C:\Practice\AI\ClaudeCode\ClaudeDemo\nlkart-database\obj\Debug\nlkart-database.sqlproj.AssemblyReference.cache
+C:\Practice\AI\ClaudeCode\ClaudeDemo\nlkart-database\obj\Debug\nlkart-database.GeneratedMSBuildEditorConfig.editorconfig
+C:\Practice\AI\ClaudeCode\ClaudeDemo\nlkart-database\obj\Debug\nlkart-database.dll
+C:\Practice\AI\ClaudeCode\ClaudeDemo\nlkart-database\obj\Debug\nlkart-database.pdb

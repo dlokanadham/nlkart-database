@@ -1,0 +1,25 @@
+CREATE TABLE [dbo].[Products]
+(
+    [ProductId]      INT            IDENTITY(1,1) NOT NULL,
+    [DealerId]       INT            NOT NULL,
+    [CategoryId]     INT            NOT NULL,
+    [Name]           NVARCHAR(200)  NOT NULL,
+    [Description]    NVARCHAR(2000) NULL,
+    [Price]          DECIMAL(18,2)  NOT NULL,
+    [OriginalPrice]  DECIMAL(18,2)  NOT NULL,
+    [ImageUrl]       NVARCHAR(500)  NULL,
+    [Stock]          INT            NOT NULL DEFAULT 0,
+    [ApprovalStatus] NVARCHAR(20)   NOT NULL DEFAULT 'Pending',
+    [ReviewerNotes]  NVARCHAR(1000) NULL,
+    [ReviewedBy]     INT            NULL,
+    [ReviewedAt]     DATETIME2      NULL,
+    [AverageRating]  DECIMAL(3,2)   NOT NULL DEFAULT 0,
+    [DiscountPercent] DECIMAL(5,2)  NOT NULL DEFAULT 0,
+    [CreatedAt]      DATETIME2      NOT NULL DEFAULT GETUTCDATE(),
+    [UpdatedAt]      DATETIME2      NOT NULL DEFAULT GETUTCDATE(),
+    CONSTRAINT [PK_Products] PRIMARY KEY CLUSTERED ([ProductId]),
+    CONSTRAINT [FK_Products_Dealer] FOREIGN KEY ([DealerId]) REFERENCES [dbo].[Users]([UserId]),
+    CONSTRAINT [FK_Products_Category] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Categories]([CategoryId]),
+    CONSTRAINT [FK_Products_Reviewer] FOREIGN KEY ([ReviewedBy]) REFERENCES [dbo].[Users]([UserId]),
+    CONSTRAINT [CK_Products_ApprovalStatus] CHECK ([ApprovalStatus] IN ('Pending', 'Approved', 'Rejected'))
+);
