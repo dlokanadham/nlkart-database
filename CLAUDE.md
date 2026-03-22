@@ -9,16 +9,9 @@ Database schema for the nlkart e-commerce platform. Uses legacy SSDT .sqlproj fo
 - MERGE statements for idempotent seed data
 - Visual Studio 2017+ with SSDT for build/publish
 
-## Schema (11 Tables)
-Roles, Users, Categories, Products, CartItems, Orders, OrderItems, ProductReviews, Transactions, Notifications, OfferRules
-
-## File Structure
-- Solution: `nlkart-database.sln`
-- Project: `nlkart-database/nlkart-database.sqlproj`
-- Tables: `nlkart-database/dbo/Tables/<TableName>.sql`
-- Post-deploy seed: `nlkart-database/dbo/Scripts/Post-Deployment/SeedData/Script.<Table>SeedData.sql`
-- Master post-deploy: `nlkart-database/dbo/Scripts/Post-Deployment/Script.PostDeployment.sql`
-- Publish profile: `nlkart-database/local.publish.xml`
+## Structure
+- Tables live under `dbo/Tables/`, seed data under `dbo/Scripts/Post-Deployment/SeedData/`
+- Discover tables and schema by reading the .sql files directly
 
 ## Conventions
 - All tables use `INT IDENTITY(1,1)` primary keys
